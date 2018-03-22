@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- General stuff -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Visualz++ Sample Page</title>
+
+    <!-- Mobile theming -->
+    <meta name="theme-color" content="#232323" />
+    <meta name="msapplication-navbutton-color" content="#232323">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#232323">
+
+    <!-- Style links -->
+    <link rel="stylesheet" type href="stl/style.css">
+
+    <!-- Scripts -->
+    <!-- <script src="scr/jquery-3.3.1.min.js"></script> Uncomment if you want to use local jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="scr/analyzer.js"></script>
+    <script src="scr/visuals.js"></script>
+
+</head>
+
+<body>
+    <main>
+        <div id="wrapper">
+            <img id="sampleImage" src="img/sampleImage.png" alt="" />
+            <audio id="music" loop></audio>
+        </div>
+    </main>
+    <footer>
+        <p></p> 
+                <a href="#" id="controls">Turn Music on/off</a>
+                <script>
+                $(document).ready(function () {
+                    $('#sampleImage').visualize();
+                      var playlist = ["track1", "track2", "track3"];
+                    var cntrl = $('#music').analyze(playlist);
+                        $('#controls').on('click', function () {
+                            cntrl.playPause();
+                            cntrl.switchTrack();
+                        });
+                    });
+                    </script>
+    </footer>
+</body>
+<!--Sample by Magoloric: https://github.com/Magoloric
+    Created with Visualz++ https://github.com/Magoloric/vizuals++
+    Based on Visualz: https://github.com/Juribiyan/visualz -->
+</html>
