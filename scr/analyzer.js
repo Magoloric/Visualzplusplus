@@ -94,8 +94,10 @@
         playPause: function () {
             if (audio.paused) {
                 audio.play(); 
-            } else
-                audio.pause()
+            } else {
+                audio.pause();
+                this.switchTrack();
+            }
         },
         switchTrack: function () {
             playList.load(true)
